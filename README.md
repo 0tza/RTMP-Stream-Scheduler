@@ -4,7 +4,7 @@ RTMP Stream Scheduler is a piece of software that can launch RTMP Streams agains
 	
 A standard use case : ./schedulerCore [timeToSleep] [Name of Media] [mediaPath] [nameOfChannel] [positionToStartFrom] [durationOfPlay]
 
-## Installation ## 
+## Installation 
 
 ### FFMPEG ###
 	apt-get install ffmpeg 
@@ -12,7 +12,11 @@ A standard use case : ./schedulerCore [timeToSleep] [Name of Media] [mediaPath] 
 or
 
 	brew install ffmpeg 
-## Nginx Configuration ## 
+	
+## Compile
+	gcc main.c -o Scheduler
+	
+## Nginx Configuration 
 
 In addition to the scheduler, Nginx and it's RTMP Module can be used to restream the RTMP Input into : 
 * RTMP 
@@ -24,7 +28,7 @@ The configuration file is an example or how many tv channels in HLS can be set.
 
 ## EXAMPLES ##
 
-	Example : 0 playFilm vision.mp4 tvc15 00:30 10 
+	Example : Scheduler 0 playFilm vision.mp4 tvc15 00:30 10 
 	Means   : Wait for 0 Second Then Play vision.mp4 on channel tvc15 from the position 00:30 (s) of the video for 10 seconds
 
 Example 2 : 0 playFilm vision.mp4 tvc15 00:30 10 15 playFilm bbb720.mp4 tvc15 00:30 10 25 playFilm vision.mp4 tvc15 00:00 10
